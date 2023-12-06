@@ -1,6 +1,6 @@
 # You can copy/paste this template to start a new day
 
-"""01: PROBLEM NAME"""
+"""01: Trebuchet?!"""
 import aoc.util
 from typing import List
 
@@ -16,7 +16,6 @@ class Solver(aoc.util.Solver):
         # useful representation and storing it in the instance
 
     def part_one(self) -> int:
-        # TODO: actually return the answer
         sums = 0
         for line in self.input.split("\n"):
             stripped = [i for i in line if i.isdigit()]
@@ -52,7 +51,6 @@ class Solver(aoc.util.Solver):
         return "".join([i for i in text_in if i.isdigit()])
     
     def part_two(self) -> int:
-        # TODO: actually return the answer
         sums = 0
         for line in self.input.split("\n"):
             stripped = self.replace_word_with_digit(line)
