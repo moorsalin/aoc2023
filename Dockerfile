@@ -3,3 +3,5 @@
 # and publish the image. You will need to modify the ci build-task.yaml to use
 # your custom image if you decide to do that route.
 FROM mattcl/aoc-python:3.12
+
+RUN apt-get install --yes git
