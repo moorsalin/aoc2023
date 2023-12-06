@@ -2,6 +2,7 @@
 
 """01: PROBLEM NAME"""
 import aoc.util
+from typing import List
 
 
 # all solutions should subclass the `Solver` exposed by `aoc.util`
@@ -25,7 +26,7 @@ class Solver(aoc.util.Solver):
                 sums += new_num
         return sums
 
-    def replace_word_with_digit(self, input:str):
+    def replace_word_with_digit(self, text_in:str) -> List[str]:
         words = {
             'one':1,
             'two':2,
@@ -39,16 +40,16 @@ class Solver(aoc.util.Solver):
         }
         matches = []
         for k,_ in words.items():
-            if k in input:
-                input.index
-                match = (k, input.index(k))
+            if k in text_in:
+                text_in.index
+                match = (k, text_in.index(k))
                 matches.append(match)
         matches.sort(key=lambda x: x[1])
         if matches:
             for match,_ in matches:
-                input = input.replace(match,f"{words[match]}",1)
+                text_in = text_in.replace(match,f"{words[match]}",1)
 
-        return "".join([i for i in input if i.isdigit()])
+        return "".join([i for i in text_in if i.isdigit()])
     
     def part_two(self) -> int:
         # TODO: actually return the answer
@@ -58,5 +59,5 @@ class Solver(aoc.util.Solver):
             if stripped:
                 new_num = f"{stripped[0]}{stripped[-1]}"
                 new_num = int(new_num)
-                sums += new_nums
+                sums += new_num
         return sums
