@@ -1,6 +1,6 @@
 # You can copy/paste this template to start a new day
 
-"""01: PROBLEM NAME"""
+"""02: PROBLEM NAME"""
 import aoc.util
 
 
