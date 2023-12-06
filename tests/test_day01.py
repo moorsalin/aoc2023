@@ -8,7 +8,7 @@ from aoc.util import Solution
 # ======= solutons =========#
 #############################
 EXAMPLE_PART_ONE = 142
-EXAMPLE_PART_TWO = 0
+EXAMPLE_PART_TWO = 281
 PART_ONE = 53080
 PART_TWO = 0
 
@@ -21,6 +21,10 @@ def example_input() -> str:
     with open("inputs/day01_example.txt", "r") as f:
         return f.read()
 
+@pytest.fixture
+def example_two_input() -> str:
+    with open("inputs/day01_part2_example.txt", "r") as f:
+        return f.read()
 
 @pytest.fixture
 def real_input() -> str:
@@ -31,6 +35,10 @@ def real_input() -> str:
 @pytest.fixture
 def example_solver(example_input: str) -> Solver:
     return Solver(example_input)
+
+@pytest.fixture
+def example_two_solver(example_two_input: str) -> Solver:
+    return Solver(example_two_input)
 
 
 @pytest.fixture
@@ -55,9 +63,16 @@ def test_real_part_one(real_solver: Solver):
 #############################
 # === tests for part two ===#
 #############################
+@pytest.mark.parametrize(
+    argnames=["test_input", "correct_answer"], argvalues=[("1sixnine9", "1699"), ("1oneoneightwo9", "1189")]
+)
+def test_replace_word_with_digit(example_two_solver: Solver, test_input, correct_answer):
+    assert example_two_solver.replace_word_with_digit(test_input) == correct_answer
+
+
 @pytest.mark.example
-def test_example_part_two(example_solver: Solver):
-    assert example_solver.part_two() == EXAMPLE_PART_TWO
+def test_example_part_two(example_two_solver: Solver):
+    assert example_two_solver.part_two() == EXAMPLE_PART_TWO
 
 
 @pytest.mark.real
