@@ -16,7 +16,14 @@ class Solver(aoc.util.Solver):
 
     def part_one(self) -> int:
         # TODO: actually return the answer
-        return 0
+        sums = 0
+        for line in self.input.split("\n"):
+            stripped = [i for i in line if i.isdigit()]
+            if stripped:
+                new_num = f"{stripped[0]}{stripped[-1]}"
+                new_num = int(new_num)
+                sums += new_num
+        return sums
 
     def part_two(self) -> int:
         # TODO: actually return the answer
