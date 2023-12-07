@@ -17,6 +17,7 @@ moorsalin-aoc-bench = "aoc.bench_cli:run"
 [tool.poetry.dependencies]
 python = "^3.10"
 click = "^8.1.7"
+regex = "^2023.10.3"
 
 [tool.poetry.dev-dependencies]
 black = "^23.10.0"
@@ -32,6 +33,7 @@ build-backend = "poetry.core.masonry.api"
 line-length = 120
 
 [tool.pytest.ini_options]
+addopts = "-vv"
 markers = [
     "real: marks tests as running against the real input (deselect with '-m \"not real\"')",
     "example: marks tests as running against the example input (deselect with '-m \"not example\"')",
