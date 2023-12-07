@@ -10,7 +10,7 @@ from aoc.util import Solution
 EXAMPLE_PART_ONE = 142
 EXAMPLE_PART_TWO = 281
 PART_ONE = 53080
-PART_TWO = 0
+PART_TWO = 53268
 
 
 #############################
@@ -66,17 +66,28 @@ def test_real_part_one(real_solver: Solver):
 #############################
 # === tests for part two ===#
 #############################
+
+
+@pytest.mark.example
 @pytest.mark.parametrize(
     argnames=["test_input", "correct_answer"],
     argvalues=[
-        ("1sixnine9", "1699"),
-        ("1oneoneightwo9", "1189"),
-        ("threeccbdtsrfv4drmvqcbdsix7sevenfiven", "346775"),
-        ("pbkprbzvs819threeonekjpk7brkmbqbkgroneightb", "8193171"),
+        ("1sixnine9", 19),
+        ("1oneoneightwo9", 19),
+        ("threeccbdtsrfv4drmvqcbdsix7sevenfiven", 35),
+        ("pbkprbzvs819threeonekjpk7brkmbqbkgroneightb", 88),
+        ("fivedmtplmsixeightllqbsdps941eight", 58),
+        ("four2ndrspfq8gmseven766", 46),
+        ("293", 23),
+        ("7z", 77),
+        ("one", 11),
+        ("two", 22),
+        ("three", 33),
+        ("eightwo", 82),
     ],
 )
 def test_replace_word_with_digit(example_two_solver: Solver, test_input, correct_answer):
-    assert example_two_solver.replace_word_with_digit(test_input) == correct_answer
+    assert example_two_solver.replace_word_with_digit_from_start(test_input) == correct_answer
 
 
 @pytest.mark.example
