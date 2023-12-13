@@ -46,6 +46,5 @@
     // "remoteUser": "root"
     // "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
     // "workspaceFolder": ""
-    "workspaceMount": "source=aoc2023,target=/workspace,type=volume",
-    "workspaceFolder": "/workspace"
+    
 }
