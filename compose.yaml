@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  aoc2023:
+    build: 
+      dockerfile:
+        ./Dockerfile
+    volumes:
+      - aoc2023:/workspaces/aoc2023
+
+volumes:
+    aoc2023:
+        external: false

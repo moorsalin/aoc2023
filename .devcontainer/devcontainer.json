@@ -4,10 +4,12 @@
     "name": "Python 3",
     // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
     // "image": "mcr.microsoft.com/devcontainers/python:0-3.11",
-    "build": {
-        // Path is relative to the devcontainer.json file.
-        "dockerfile": "../Dockerfile"
-    },
+    // "build": {
+    //     // Path is relative to the devcontainer.json file.
+    //     "dockerfile": "../Dockerfile"
+    // },
+    "dockerComposeFile": "../compose.yml",
+    "service": "aoc2023",
     // Features to add to the dev container. More info: https://containers.dev/features.
     // "features": {},
     // Configure tool-specific properties.
@@ -44,7 +46,7 @@
     "postCreateCommand": "poetry install",
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
     // "remoteUser": "root"
-    // "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
-    // "workspaceFolder": ""
-    
+    // "workspaceMount": "source=/workspaces/${project},target=/workspaces,type=bind",
+    "workspaceFolder": "/workspaces/aoc2023" ,   
+    "shutdownAction": "stopCompose"
 }
