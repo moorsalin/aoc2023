@@ -5,7 +5,7 @@ services:
     tty: true
     build:
       context: .
-      dockerfile: ./aoc2023.Dockerfile
+      dockerfile: ./deb.Dockerfile
     volumes:
       - advent_vol:/workspace/aoc2023
       - vscode:/workspace/aoc2023/.vscode
